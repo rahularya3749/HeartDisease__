@@ -72,13 +72,14 @@ The work includes:
 ---
 
 ## 🧪 Repository Structure
+```
 ├── 1. heart_disease_analysis.ipynb # Main ML project notebook
 ├── 2. heart-AB-testing.ipynb # A/B testing & statistical analysis
 ├── 3.1 Heart Disease Dashboard.png # Power BI dashboard (image)
 ├── 3.2 heart_disease_dashboard.pdf # Dashboard report
 ├── 3.3 heart_disease_dashboard_temp.pbit # Power BI template file
 ├── README.md # Project documentation
-
+```
 
 
 ---
@@ -104,7 +105,7 @@ The work includes:
 
 ## 📌 Tools & Technologies
 - **Python**: pandas, numpy, matplotlib, seaborn, scikit-learn, xgboost, shap, optuna  
-- **Statistics**: A/B testing, hypothesis testing, chi-square, t-tests  
+- **Statistics**: A/B testing, hypothesis testing, z-tests, t-tests  
 - **Visualization**: Matplotlib, Seaborn, Power BI  
 - **Version Control**: GitHub  
 
