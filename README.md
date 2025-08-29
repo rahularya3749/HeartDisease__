@@ -42,109 +42,136 @@ The dataset is a combination of five well-known heart disease datasets (Clevelan
 
 ---
 ## Repository Structure
-```
-├── heart_disease_analysis.ipynb → Data exploration, preprocessing, EDA, feature engineering, model training (XGBoost), evaluation, and interpretation.
-├── heath-AB-testing.ipynb → A/B testing on risk factors (ST\_Slope, cholesterol, high cholesterol thresholds).
-├── 3.1 Heart Disease Dashboard.png → Screenshot of PowerBI dashboard.
-├── 3.2 heart_disease_dashboard.pdf → PDF export of dashboard.
-├── 3.3 heart_diease_dashboard_temp.pbit → PowerBI template file.
-├── README.md → Project documentation.
-```
+- **`1. heart_disease_analysis.ipynb`**: Main notebook for data exploration, preprocessing, EDA, feature engineering, model training (XGBoost), evaluation, and interpretations (including SHAP and ROC).
+- **`2. heath-AB-testing.ipynb`**: Notebook for A/B testing (hypothesis tests) on key risk factors like ST_Slope, cholesterol levels, and high cholesterol thresholds.
+- **`3.1 Heart Disease Dashboard.png`**: Screenshot of the PowerBI dashboard.
+- **`3.2 heart_disease_dashboard.pdf`**: PDF export of the PowerBI dashboard.
+- **`3.3 heart_diease_dashboard_temp.pbit`**: PowerBI template file for the dashboard.
+- **`README.md`**: This file.
 ---
 
 ## Requirements
+To run the notebooks, install the following Python libraries (via `pip install -r requirements.txt` if provided, or manually):
 
-Install the following Python libraries:
+- pandas
+- numpy
+- matplotlib
+- seaborn
+- scikit-learn
+- xgboost
+- optuna (for hyperparameter tuning)
+- shap (for model interpretability)
+- scipy (for statistical tests)
 
-* pandas
-* numpy
-* matplotlib
-* seaborn
-* scikit-learn
-* xgboost
-* optuna
-* shap
-* scipy
+For the PowerBI dashboard:
+- Microsoft PowerBI Desktop (free download from [Microsoft](https://powerbi.microsoft.com/)).
 
-For the dashboard:
-
-* [Microsoft Power BI Desktop](https://powerbi.microsoft.com/) (free download).
+No additional datasets are needed; the notebooks assume the data is loaded from a standard source (e.g., via pandas or direct import).
 
 ---
 
 ## Usage
-
 1. **Clone the Repository**:
-
    ```
    git clone https://github.com/your-username/heart-disease-prediction.git
    cd heart-disease-prediction
    ```
 
 2. **Run the Main Notebook**:
-
-   * Open `heart_disease_analysis.ipynb` in Jupyter Notebook or JupyterLab.
-   * Execute cells sequentially for data loading, EDA, modeling, and evaluation.
+   - Open `heart_disease_analysis.ipynb` in Jupyter Notebook or JupyterLab.
+   - Execute cells sequentially for data loading, EDA, modeling, and evaluation.
 
 3. **Run the A/B Testing Notebook**:
-
-   * Open `heath-AB-testing.ipynb` in Jupyter.
-   * Execute to reproduce hypothesis tests on ST\_Slope, cholesterol, and high-cholesterol thresholds.
+   - Open `heath-AB-testing.ipynb` in Jupyter.
+   - Perform hypothesis tests on the dataset.
 
 4. **View the Dashboard**:
-
-   * Open `3.3 heart_diease_dashboard_temp.pbit` in Power BI Desktop to interact with the dashboard.
-   * Or view the static image (`3.1 Heart Disease Dashboard.png`) or PDF (`3.2 heart_disease_dashboard.pdf`).
+   - Open `3.3 heart_diease_dashboard_temp.pbit` in PowerBI Desktop.
+   - Alternatively, view the static image (`3.1 Heart Disease Dashboard.png`) or PDF (`3.2 heart_disease_dashboard.pdf`).
 
 ---
 
 ## Workflow
+The project follows this structure:
 
-1. Data exploration & cleaning
-2. Exploratory data analysis (EDA)
-3. Feature engineering & encoding
-4. Train/validation/test split (70/20/10)
-5. Modeling with XGBoost + Optuna
-6. Evaluation (confusion matrix, ROC, SHAP)
-7. A/B testing for clinical insights
-8. Dashboard visualization in Power BI
+1. **Data Exploration and Descriptive Statistics**: Profiling, cleaning (handling outliers in Cholesterol, RestingBP, Oldpeak).
+2. **Exploratory Data Analysis (EDA)**:
+   - Correlation heatmap.
+   - Univariate distributions (e.g., age, cholesterol).
+   - Categorical breakdowns (e.g., donut charts for gender, chest pain).
+   - Trivariate visualizations for continuous features.
+3. **Feature Engineering**:
+   - Domain-informed features (e.g., risk scores).
+   - Encoding categorical variables.
+   - Feature interactions (e.g., ChestPainType_ST_Slope).
+4. **Train/Valid/Test Split**: 70/20/10.
+5. **Feature Importance**: Calculated and evaluated using model-based methods.
+6. **Pre-Model Baseline**: Pipeline setup and base model evaluation.
+7. **ML Modeling**:
+   - Hyperparameter tuning with Optuna.
+   - Model comparison.
+   - Final model: XGBoost Classifier.
+8. **Evaluation and Insights**:
+   - Confusion matrix, SHAP explanations, ROC curve.
+9. **A/B Testing**: Hypothesis tests on risk factors (detailed below).
+10. **Dashboard**: Interactive visualizations in PowerBI.
 
 ---
 
-## Key Results
+## Key Insights from ML Model
 
-**Model Performance (XGBoost):**
+- **Model Performance**:
+  - Training Accuracy: 97.58%, Test Accuracy: 85.87%.
+  - ROC AUC (Test): 0.9273.
+- **Classification Report (Test)**:
+  - Class 0 (No Disease): Precision 0.80, Recall 0.90, F1 0.85.
+  - Class 1 (Disease): Precision 0.91, Recall 0.82, F1 0.87.
+- **Confusion Matrix**: TN=37, FP=4, FN=9, TP=42.
+- **Top Features (SHAP)**:
+  - ST_Slope_max_hr_bins (0.95).
+  - ChestPainType_ST_Slope (0.80).
+  - Sex_RiskScore_coded (0.71).
+- **Overall**: The model shows strong generalization, with exercise-related and chest pain features as dominant predictors. Future work could tune for higher recall to reduce missed positives.
 
-* Train Accuracy: **97.58%**
-* Test Accuracy: **85.87%**
-* ROC AUC: **0.9273**
-
-**Classification Report (Test):**
-
-* Class 0 (No Disease): Precision 0.80, Recall 0.90, F1 0.85
-* Class 1 (Disease): Precision 0.91, Recall 0.82, F1 0.87
-
-**Top Predictors (SHAP):**
-
-* ST\_Slope × MaxHR
-* ChestPainType × ST\_Slope
-* Sex & RiskScore
 
 ---
 
 ## A/B Testing Insights
 
-1. **ST\_Slope (Flat vs. Down)** → Not significant (p = 0.326).
-2. **Cholesterol (Disease vs. No Disease)** → Significant (p = 0.0022).
-3. **High Cholesterol (>240 mg/dL)** → Highly significant (p < 1e-8).
+Three hypothesis tests were conducted to explore risk factors:
 
-These tests provide statistical evidence to support screening and intervention decisions (e.g., prioritizing cholesterol control).
+1. **ST_Slope Effect (Flat vs. Down)**:
+   - Heart disease rate: Flat (82.8%) vs. Down (77.7%).
+   - p-value: 0.326 (>0.05) → Not significant.
+   - Insight: ST_Slope alone isn't a reliable predictor; combine with other features.
+
+2. **Cholesterol Difference (With vs. Without Disease)**:
+   - Average cholesterol: Disease (249.3) vs. No Disease (238.6).
+   - p-value: 0.0022 (<0.05) → Significant.
+   - Insight: Higher cholesterol is a key risk factor; include in screening programs.
+
+3. **High Cholesterol Risk (>240 mg/dL vs. ≤240)**:
+   - p-value: 2.3e-09 (<0.05) → Highly significant.
+   - Insight: >240 mg/dL is a strong cutoff for risk stratification; prioritize interventions.
+
+These tests provide statistical evidence for clinical and business decisions, such as targeted cholesterol management (e.g., prioritizing cholesterol control).
 
 ---
 
 ## Dashboard Preview
 
+The PowerBI dashboard visualizes key metrics:
+- Total Patients: 918.
+- Heart Disease %: 55.34%.
+- Age Group Distribution: Highest in 50-59.
+- Gender: 78.98% Male.
+- Chest Pain Type vs. Heart Disease: ASY highest risk (86.13%).
+- Average Max HR by Age: Declining trend.
+- And more (see screenshot below).
+
 ![Heart Disease Dashboard](./3.1%20Heart%20Disease%20Dashboard.png)
+
+For interactive exploration, load the `.pbit` file in PowerBI.
 
 ---
 
@@ -153,12 +180,6 @@ These tests provide statistical evidence to support screening and intervention d
 * Project data (Kaggle): [https://www.kaggle.com/datasets/fedesoriano/heart-failure-prediction](https://www.kaggle.com/datasets/fedesoriano/heart-failure-prediction)
 * UCI Heart Disease dataset: [https://archive.ics.uci.edu/ml/datasets/heart+disease](https://archive.ics.uci.edu/ml/datasets/heart+disease)
 * Power BI: [https://powerbi.microsoft.com/](https://powerbi.microsoft.com/)
-
----
-
-## Contributing
-
-Contributions welcome! Fork the repo and submit a pull request with improvements, bug fixes, or additional analyses.
 
 ---
 
