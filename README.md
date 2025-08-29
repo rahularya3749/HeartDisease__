@@ -1,10 +1,10 @@
-- # HeartDisease__
+# HeartDisease__
 End-to-end data science project on Heart Disease prediction. Covers preprocessing, statistical analysis, visualization, A/B Test, feature engineering, model training, and performance evaluation.
 
 
-# ❤️ Heart Disease Prediction & Analysis
+# Heart Disease Prediction & Analysis
 
-## 📖 Project Overview
+## Project Overview
 Cardiovascular disease is one of the leading causes of death worldwide. Early detection and accurate prediction can save lives and improve treatment strategies.  
 This project explores a combined heart disease dataset, applying **statistical analysis, machine learning, and data visualization** to gain insights and build predictive models.  
 
@@ -15,7 +15,7 @@ The work includes:
 
 ---
 
-## 📊 Dataset
+## Dataset
 - **Source**: UCI Machine Learning Repository (Cleveland, Hungarian, Switzerland, Long Beach VA, Stalog datasets combined)  
 - **Size**: 918 patient records  
 - **Features**: 11 clinical attributes  
@@ -31,7 +31,7 @@ The work includes:
 
 ---
 
-## 🛠️ Workflow
+##  Workflow
 1. **Data Cleaning & Preprocessing**
    - Handled missing/inconsistent values  
    - Feature engineering (risk scores, binning, interactions)  
@@ -62,7 +62,7 @@ The work includes:
 
 ---
 
-## 📈 Results & Insights
+## Results & Insights
 - **Cholesterol** is a statistically significant predictor of heart disease  
 - Patients with **cholesterol > 240 mg/dL** have a much higher risk (p ≈ 2.3e-09)  
 - **ST slope + chest pain type + exercise angina** were among the strongest predictors  
@@ -71,7 +71,7 @@ The work includes:
 
 ---
 
-## 🧪 Repository Structure
+## Repository Structure
 ```
 ├── 1. heart_disease_analysis.ipynb # Main ML project notebook
 ├── 2. heart-AB-testing.ipynb # A/B testing & statistical analysis
@@ -84,26 +84,26 @@ The work includes:
 
 ---
 
-## 📊 Dashboard Preview
+## Dashboard Preview
 ![Heart Disease Dashboard](./3.1%20Heart%20Disease%20Dashboard.png)
 
 ---
 
-## 🔑 Key Learnings
+## Key Learnings
 - End-to-end data science workflow: data → analysis → ML → visualization  
 - Importance of combining **statistics + machine learning** for healthcare insights  
 - Effective communication of results via **dashboard and interpretation**  
 
 ---
 
-## 🚀 Future Work
+## Future Work
 - Improve recall to catch more positive cases (reduce false negatives)  
 - Explore deep learning models for improved accuracy  
 - Deploy as an **API on AWS / Streamlit** for real-time predictions  
 
 ---
 
-## 📌 Tools & Technologies
+## Tools & Technologies
 - **Python**: pandas, numpy, matplotlib, seaborn, scikit-learn, xgboost, shap, optuna  
 - **Statistics**: A/B testing, hypothesis testing, z-tests, t-tests  
 - **Visualization**: Matplotlib, Seaborn, Power BI  
@@ -111,9 +111,9 @@ The work includes:
 
 ---
 
-## 👤 Author
+##  Author
 Project by **Arya Rahul**  
-📧 [Your Email] | 🔗 [LinkedIn] | 💻 [GitHub Profile]  
+[Your Email] | [LinkedIn] | [GitHub Profile]  
 
 
 
