@@ -16,7 +16,7 @@ The work includes:
 ---
 
 ## Dataset
-- **Source**: UCI Machine Learning Repository (Cleveland, Hungarian, Switzerland, Long Beach VA, Stalog datasets combined)  
+- **Source**: [UCI Machine Learning Repository](https://www.kaggle.com/datasets/fedesoriano/heart-failure-prediction) (Cleveland, Hungarian, Switzerland, Long Beach VA, Stalog datasets combined)  
 - **Size**: 918 patient records  
 - **Features**: 11 clinical attributes  
 - **Target Variable**:  
