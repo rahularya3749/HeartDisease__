@@ -1,9 +1,6 @@
 # HeartDisease__
 End-to-end data science project on Heart Disease prediction. Covers preprocessing, statistical analysis, visualization, A/B Test, feature engineering, model training, and performance evaluation.
 
-Got it ✅
-Here’s the entire thing in **one markdown cell** (no \`\`\` fencing) — you can directly paste this into your README.md:
-
 # Heart Disease Prediction and Analysis
 
 ## Project Overview
