@@ -41,7 +41,7 @@ The dataset is a combination of five well-known heart disease datasets (Clevelan
   *(Original records curated from the UCI Heart Disease datasets — Cleveland, Hungarian, Switzerland, Long Beach VA, Statlog.)*
 
 ---
-
+```
 ## Repository Structure
 
 * **`heart_disease_analysis.ipynb`** → Data exploration, preprocessing, EDA, feature engineering, model training (XGBoost), evaluation, and interpretation.
@@ -50,7 +50,7 @@ The dataset is a combination of five well-known heart disease datasets (Clevelan
 * **`3.2 heart_disease_dashboard.pdf`** → PDF export of dashboard.
 * **`3.3 heart_diease_dashboard_temp.pbit`** → PowerBI template file.
 * **`README.md`** → Project documentation.
-
+```
 ---
 
 ## Requirements
