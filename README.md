@@ -182,7 +182,7 @@ For interactive exploration, load the `.pbit` file in PowerBI.
 
 ## Author
 
-Project by ** Rahul Arya **
+Project by **Rahul Arya**
 📧 [rahularya3749@gmail.com](mailto:rahularya3749@gmail.com) | 🔗 [LinkedIn](https://www.linkedin.com/in/rahul-arya--1810zoro/) | 💻 [GitHub](https://github.com/rahularya3749)
 
 
