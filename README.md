@@ -41,15 +41,14 @@ The dataset is a combination of five well-known heart disease datasets (Clevelan
   *(Original records curated from the UCI Heart Disease datasets — Cleveland, Hungarian, Switzerland, Long Beach VA, Statlog.)*
 
 ---
-```
 ## Repository Structure
-
-* **`heart_disease_analysis.ipynb`** → Data exploration, preprocessing, EDA, feature engineering, model training (XGBoost), evaluation, and interpretation.
-* **`heath-AB-testing.ipynb`** → A/B testing on risk factors (ST\_Slope, cholesterol, high cholesterol thresholds).
-* **`3.1 Heart Disease Dashboard.png`** → Screenshot of PowerBI dashboard.
-* **`3.2 heart_disease_dashboard.pdf`** → PDF export of dashboard.
-* **`3.3 heart_diease_dashboard_temp.pbit`** → PowerBI template file.
-* **`README.md`** → Project documentation.
+```
+├── heart_disease_analysis.ipynb → Data exploration, preprocessing, EDA, feature engineering, model training (XGBoost), evaluation, and interpretation.
+├── heath-AB-testing.ipynb → A/B testing on risk factors (ST\_Slope, cholesterol, high cholesterol thresholds).
+├── 3.1 Heart Disease Dashboard.png → Screenshot of PowerBI dashboard.
+├── 3.2 heart_disease_dashboard.pdf → PDF export of dashboard.
+├── 3.3 heart_diease_dashboard_temp.pbit → PowerBI template file.
+├── README.md → Project documentation.
 ```
 ---
 
@@ -163,15 +162,10 @@ Contributions welcome! Fork the repo and submit a pull request with improvements
 
 ---
 
-## License
+## Author
 
-Licensed under the MIT License. See the [LICENSE](LICENSE) file for details (if not present, assume open-source for educational purposes).
-
----
-
-Do you also want me to make a **short LinkedIn/portfolio-friendly version** (just overview + key results + dashboard preview)? That way you’ll have both GitHub (detailed) and LinkedIn (compact) versions ready.
-
-
+Project by **Arya Rahul**
+📧 [rahularya3749@gmail.com](mailto:rahularya3749@gmail.com) | 🔗 [LinkedIn](https://www.linkedin.com/in/rahul-arya--1810zoro/) | 💻 [GitHub](https://github.com/rahularya3749)
 
 
 
