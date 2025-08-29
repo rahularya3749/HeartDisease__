@@ -1,119 +1,177 @@
 # HeartDisease__
 End-to-end data science project on Heart Disease prediction. Covers preprocessing, statistical analysis, visualization, A/B Test, feature engineering, model training, and performance evaluation.
 
+Got it ✅
+Here’s the entire thing in **one markdown cell** (no \`\`\` fencing) — you can directly paste this into your README.md:
 
-# Heart Disease Prediction & Analysis
+# Heart Disease Prediction and Analysis
 
 ## Project Overview
-Cardiovascular disease is one of the leading causes of death worldwide. Early detection and accurate prediction can save lives and improve treatment strategies.  
-This project explores a combined heart disease dataset, applying **statistical analysis, machine learning, and data visualization** to gain insights and build predictive models.  
 
-The work includes:
-- End-to-end **machine learning pipeline** for heart disease classification
-- **A/B testing (hypothesis testing)** on clinical risk factors
-- An interactive **Power BI dashboard** for data visualization
+Cardiovascular disease is one of the leading causes of death worldwide. Early detection and risk prediction can significantly improve patient outcomes. This project analyzes a heart disease dataset, builds predictive models to classify whether a patient is likely to have heart disease, performs A/B testing to explore key risk factors, and includes a PowerBI dashboard for interactive visualization.
+
+The main focus is on machine learning-based prediction using XGBoost, combined with statistical hypothesis testing (A/B tests) to validate clinical insights. The project demonstrates a complete data science workflow from exploration to model interpretation.
 
 ---
 
-## Dataset
-- **Source**: [UCI Machine Learning Repository](https://www.kaggle.com/datasets/fedesoriano/heart-failure-prediction) (Cleveland, Hungarian, Switzerland, Long Beach VA, Stalog datasets combined)  
-- **Size**: 918 patient records  
-- **Features**: 11 clinical attributes  
-- **Target Variable**:  
-  - `1` → Patient has heart disease  
-  - `0` → Patient does not have heart disease  
+## Dataset Description
 
-**Key Features:**
-- Age, Sex, Chest Pain Type  
-- Resting Blood Pressure, Cholesterol, Fasting Blood Sugar  
-- Resting ECG, Max Heart Rate, Exercise Angina  
-- Oldpeak, ST Slope  
+The dataset is a combination of five well-known heart disease datasets (Cleveland, Hungarian, Switzerland, Long Beach VA, and Statlog), merged into a single collection of 918 patient records with 11 features.
 
----
+* **Target Variable**: `HeartDisease`
 
-##  Workflow
-1. **Data Cleaning & Preprocessing**
-   - Handled missing/inconsistent values  
-   - Feature engineering (risk scores, binning, interactions)  
+  * 1 → Patient has heart disease
+  * 0 → Patient does not have heart disease
 
-2. **Exploratory Data Analysis (EDA)**
-   - Correlation heatmaps  
-   - Distribution plots & categorical analysis  
-   - Clinical insights  
+* **Features**:
 
-3. **A/B Testing (Statistical Analysis)**
-   - Compared groups to test significant differences  
-   - Example tests: cholesterol impact, ST slope effect, high cholesterol cutoff  
+  * `Age`: Patient age (years)
+  * `Sex`: Gender (M = Male, F = Female)
+  * `ChestPainType`: Chest pain type (TA = Typical Angina, ATA = Atypical Angina, NAP = Non-Anginal Pain, ASY = Asymptomatic)
+  * `RestingBP`: Resting blood pressure (mm Hg)
+  * `Cholesterol`: Serum cholesterol (mg/dl)
+  * `FastingBS`: Fasting blood sugar (1 if >120 mg/dl, else 0)
+  * `RestingECG`: Resting electrocardiogram results (Normal, ST = ST-T wave abnormality, LVH = Left ventricular hypertrophy)
+  * `MaxHR`: Maximum heart rate achieved (60–202 bpm)
+  * `ExerciseAngina`: Exercise-induced angina (Y = Yes, N = No)
+  * `Oldpeak`: ST depression induced by exercise
+  * `ST_Slope`: Slope of the ST segment (Up, Flat, Down)
 
-4. **Machine Learning Modeling**
-   - Baseline models → Logistic Regression, Decision Trees, Random Forest  
-   - Hyperparameter tuning with **Optuna**  
-   - Final model: **XGBoost Classifier**  
-
-5. **Model Evaluation**
-   - Accuracy: **85.9%** (Test set)  
-   - ROC AUC: **0.93**  
-   - Balanced precision & recall across classes  
-   - SHAP analysis for feature importance  
-
-6. **Dashboard (Power BI)**
-   - Interactive visualizations of age groups, cholesterol, chest pain types, and gender distribution  
-   - KPIs for patient statistics and heart disease prevalence  
-
----
-
-## Results & Insights
-- **Cholesterol** is a statistically significant predictor of heart disease  
-- Patients with **cholesterol > 240 mg/dL** have a much higher risk (p ≈ 2.3e-09)  
-- **ST slope + chest pain type + exercise angina** were among the strongest predictors  
-- XGBoost model generalizes well with high discriminative power  
-- **Business/Medical Impact**: Cholesterol management and exercise-related monitoring are crucial in risk reduction  
+* **Source**: [Kaggle - fedesoriano/heart-failure-prediction](https://www.kaggle.com/datasets/fedesoriano/heart-failure-prediction)
+  *(Original records curated from the UCI Heart Disease datasets — Cleveland, Hungarian, Switzerland, Long Beach VA, Statlog.)*
 
 ---
 
 ## Repository Structure
-```
-├── 1. heart_disease_analysis.ipynb # Main ML project notebook
-├── 2. heart-AB-testing.ipynb # A/B testing & statistical analysis
-├── 3.1 Heart Disease Dashboard.png # Power BI dashboard (image)
-├── 3.2 heart_disease_dashboard.pdf # Dashboard report
-├── 3.3 heart_disease_dashboard_temp.pbit # Power BI template file
-├── README.md # Project documentation
-```
 
+* **`heart_disease_analysis.ipynb`** → Data exploration, preprocessing, EDA, feature engineering, model training (XGBoost), evaluation, and interpretation.
+* **`heath-AB-testing.ipynb`** → A/B testing on risk factors (ST\_Slope, cholesterol, high cholesterol thresholds).
+* **`3.1 Heart Disease Dashboard.png`** → Screenshot of PowerBI dashboard.
+* **`3.2 heart_disease_dashboard.pdf`** → PDF export of dashboard.
+* **`3.3 heart_diease_dashboard_temp.pbit`** → PowerBI template file.
+* **`README.md`** → Project documentation.
+
+---
+
+## Requirements
+
+Install the following Python libraries:
+
+* pandas
+* numpy
+* matplotlib
+* seaborn
+* scikit-learn
+* xgboost
+* optuna
+* shap
+* scipy
+
+For the dashboard:
+
+* [Microsoft Power BI Desktop](https://powerbi.microsoft.com/) (free download).
+
+---
+
+## Usage
+
+1. **Clone the Repository**:
+
+   ```
+   git clone https://github.com/your-username/heart-disease-prediction.git
+   cd heart-disease-prediction
+   ```
+
+2. **Run the Main Notebook**:
+
+   * Open `heart_disease_analysis.ipynb` in Jupyter Notebook or JupyterLab.
+   * Execute cells sequentially for data loading, EDA, modeling, and evaluation.
+
+3. **Run the A/B Testing Notebook**:
+
+   * Open `heath-AB-testing.ipynb` in Jupyter.
+   * Execute to reproduce hypothesis tests on ST\_Slope, cholesterol, and high-cholesterol thresholds.
+
+4. **View the Dashboard**:
+
+   * Open `3.3 heart_diease_dashboard_temp.pbit` in Power BI Desktop to interact with the dashboard.
+   * Or view the static image (`3.1 Heart Disease Dashboard.png`) or PDF (`3.2 heart_disease_dashboard.pdf`).
+
+---
+
+## Workflow
+
+1. Data exploration & cleaning
+2. Exploratory data analysis (EDA)
+3. Feature engineering & encoding
+4. Train/validation/test split (70/20/10)
+5. Modeling with XGBoost + Optuna
+6. Evaluation (confusion matrix, ROC, SHAP)
+7. A/B testing for clinical insights
+8. Dashboard visualization in Power BI
+
+---
+
+## Key Results
+
+**Model Performance (XGBoost):**
+
+* Train Accuracy: **97.58%**
+* Test Accuracy: **85.87%**
+* ROC AUC: **0.9273**
+
+**Classification Report (Test):**
+
+* Class 0 (No Disease): Precision 0.80, Recall 0.90, F1 0.85
+* Class 1 (Disease): Precision 0.91, Recall 0.82, F1 0.87
+
+**Top Predictors (SHAP):**
+
+* ST\_Slope × MaxHR
+* ChestPainType × ST\_Slope
+* Sex & RiskScore
+
+---
+
+## A/B Testing Insights
+
+1. **ST\_Slope (Flat vs. Down)** → Not significant (p = 0.326).
+2. **Cholesterol (Disease vs. No Disease)** → Significant (p = 0.0022).
+3. **High Cholesterol (>240 mg/dL)** → Highly significant (p < 1e-8).
+
+These tests provide statistical evidence to support screening and intervention decisions (e.g., prioritizing cholesterol control).
 
 ---
 
 ## Dashboard Preview
+
 ![Heart Disease Dashboard](./3.1%20Heart%20Disease%20Dashboard.png)
 
 ---
 
-## Key Learnings
-- End-to-end data science workflow: data → analysis → ML → visualization  
-- Importance of combining **statistics + machine learning** for healthcare insights  
-- Effective communication of results via **dashboard and interpretation**  
+## Important Links
+
+* Project data (Kaggle): [https://www.kaggle.com/datasets/fedesoriano/heart-failure-prediction](https://www.kaggle.com/datasets/fedesoriano/heart-failure-prediction)
+* UCI Heart Disease dataset: [https://archive.ics.uci.edu/ml/datasets/heart+disease](https://archive.ics.uci.edu/ml/datasets/heart+disease)
+* Power BI: [https://powerbi.microsoft.com/](https://powerbi.microsoft.com/)
 
 ---
 
-## Future Work
-- Improve recall to catch more positive cases (reduce false negatives)  
-- Explore deep learning models for improved accuracy  
-- Deploy as an **API on AWS / Streamlit** for real-time predictions  
+## Contributing
+
+Contributions welcome! Fork the repo and submit a pull request with improvements, bug fixes, or additional analyses.
 
 ---
 
-## Tools & Technologies
-- **Python**: pandas, numpy, matplotlib, seaborn, scikit-learn, xgboost, shap, optuna  
-- **Statistics**: A/B testing, hypothesis testing, z-tests, t-tests  
-- **Visualization**: Matplotlib, Seaborn, Power BI  
-- **Version Control**: GitHub  
+## License
+
+Licensed under the MIT License. See the [LICENSE](LICENSE) file for details (if not present, assume open-source for educational purposes).
 
 ---
 
-##  Author
-Project by **Arya Rahul**  
-[Your Email] | [LinkedIn] | [GitHub Profile]  
+Do you also want me to make a **short LinkedIn/portfolio-friendly version** (just overview + key results + dashboard preview)? That way you’ll have both GitHub (detailed) and LinkedIn (compact) versions ready.
+
+
 
 
 
