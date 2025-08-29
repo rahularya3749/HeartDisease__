@@ -162,7 +162,7 @@ The PowerBI dashboard visualizes key metrics:
 - Heart Disease %: 55.34%.
 - Age Group Distribution: Highest in 50-59.
 - Gender: 78.98% Male.
-- Chest Pain Type vs. Heart Disease: ASY highest risk (86.13%).
+- Chest Pain Type vs. Heart Disease: ASY highest risk (79.03%).
 - Average Max HR by Age: Declining trend.
 - And more (see screenshot below).
 
